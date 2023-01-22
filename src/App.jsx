@@ -9,11 +9,15 @@ function App() {
 
   useEffect(() => {
     const getApi = async () => {
-      const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`
-      );
-      setSearch(response.data);
-      console.log(search);
+      try{
+        const response = await axios.get(
+          `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`
+        )
+        setSearch(response.data);
+        console.log(search);
+      } catch(error){
+        console.log(error)
+      }
     };
 
     getApi();
