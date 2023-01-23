@@ -23,11 +23,19 @@ function App() {
     getApi();
   }, [city]);
 
+  const input = (e) => {
+    if(e.target.value.length){
+      setCity(e.target.value)
+    }else{
+      setSearch()
+    }
+  }
+
   return (
     <>
       <div className="flex justify-center items-center">
         <input
-          onChange={(e) => setCity(e.target.value)}
+          onChange={input}
           type="text"
           placeholder="Search"
           className="text-black my-5 px-3 w-[250px] py-3 placeholder-blueGray-300 text-blueGray-600   bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring flex justify-center items-center "
