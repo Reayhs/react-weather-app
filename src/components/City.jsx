@@ -12,10 +12,10 @@ function City({ city }) {
           <h1 className="text-4xl font-semibold">{city.name}</h1>
           <h1 className="text-4xl font-bold">{city.main.temp} °C</h1>
           <h1 className="text-2xl">{city.weather[0].main}</h1>
-          {city.weather[0].main == "Clear" ? <img src={clear} alt="" /> : ""}
-          {city.weather[0].main == "Clouds" ? <img src={cloud} alt="" /> : ""}
-          {city.weather[0].main == "Rain" ? <img src={rain} alt="" /> : ""}
-          {city.weather[0].main == "Snow" ? <img src={snow} alt="" /> : ""}
+          {city.weather[0].main == "Clear" && <img src={clear} alt="" /> }
+          {city.weather[0].main == "Clouds" && <img src={cloud} alt="" /> }
+          {city.weather[0].main == "Rain" && <img src={rain} alt="" /> }
+          {city.weather[0].main == "Snow" && <img src={snow} alt="" />}
         </div>
       </div>
     </>
